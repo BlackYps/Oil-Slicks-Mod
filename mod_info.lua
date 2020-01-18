@@ -1,0 +1,13 @@
+name = "Oil Slicks"
+uid = "1dd86878-6d2f-4f6d-b879-d14d37bcd45b-oil"
+version = 1
+description = "RKs Explosions mod replaces the default explosions with a new enhanced explosions that are unique for each faction. This is a re-engineered version by BlackYps."
+author = "Originally RK4000 edited by BlackYps"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = false
+icon = "/mods/oil_slicks/textures/particles/OilSlick.dds"
+before = {}
+after = {}
+conflicts = {}

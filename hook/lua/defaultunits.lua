@@ -7,8 +7,8 @@ local GlobalExplosionScaleValue = 1 * GlobalExplosionScaleValueMain
 
 local toggle = import('/mods/oil_slicks/lua/Togglestuff.lua').toggle
 
-local oldSeaUnit = SeaUnit
-SeaUnit = Class(oldSeaUnit) {
+Helperfunctions = Class() {
+
     -- Get explosion scale based off Tech number
     GetNumberByTechLvlShip = function(self, UnitTechLvl)
         if UnitTechLvl == 'TECH1' then
@@ -34,6 +34,10 @@ SeaUnit = Class(oldSeaUnit) {
             self.Trash:Add(CreateAttachedEmitter(self, -1, army, v):ScaleEmitter(scale))
         end
     end,
+}
+
+local oldSeaUnit = SeaUnit
+SeaUnit = Class(oldSeaUnit, Helperfunctions) {
     
     OnKilled = function(self, instigator, type, overkillRatio)
         local Army = self:GetArmy()
@@ -51,24 +55,11 @@ SeaUnit = Class(oldSeaUnit) {
     end
 }
 
--- Define class again, so it inherits the new functions
-AircraftCarrier = Class(SeaUnit, BaseTransport) {
-    OnKilled = function(self, instigator, type, overkillRatio)
-        self:SaveCargoMass()
-        SeaUnit.OnKilled(self, instigator, type, overkillRatio)
-        self:DetachCargo()
-    end,
-}
+local oldAircraftCarrier = AircraftCarrier
+AircraftCarrier = Class(oldAircraftCarrier, Helperfunctions) {}
 
 local oldSubUnit = SubUnit
-SubUnit = Class(oldSubUnit) {
-    
-    -- Needed for the custom booms
-    CreateEffects = function(self, EffectTable, army, scale)
-        for _, v in EffectTable do
-            self.Trash:Add(CreateAttachedEmitter(self, -1, army, v):ScaleEmitter(scale))
-        end
-    end,
+SubUnit = Class(oldSubUnit, Helperfunctions) {
     
     OnKilled = function(self, instigator, type, overkillRatio)
         local Army = self:GetArmy()

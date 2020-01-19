@@ -50,3 +50,38 @@ SeaUnit = Class(oldSeaUnit) {
        oldSeaUnit.OnKilled(self, instigator, type, overkillRatio)
     end
 }
+
+-- Define class again, so it inherits the new functions
+AircraftCarrier = Class(SeaUnit, BaseTransport) {
+    OnKilled = function(self, instigator, type, overkillRatio)
+        self:SaveCargoMass()
+        SeaUnit.OnKilled(self, instigator, type, overkillRatio)
+        self:DetachCargo()
+    end,
+}
+
+local oldSubUnit = SubUnit
+SubUnit = Class(oldSubUnit) {
+    
+    -- Needed for the custom booms
+    CreateEffects = function(self, EffectTable, army, scale)
+        for _, v in EffectTable do
+            self.Trash:Add(CreateAttachedEmitter(self, -1, army, v):ScaleEmitter(scale))
+        end
+    end,
+    
+    OnKilled = function(self, instigator, type, overkillRatio)
+        local Army = self:GetArmy()
+        local UnitTechLvl = self:GetUnitTechLvl()
+        local Number = self:GetNumberByTechLvl(UnitTechLvl or 'TECH4')
+    
+        if self:GetFractionComplete() == 1 then
+            if toggle == 1 then
+                self.CreateEffects(self, SDEffectTemplate.OilSlick, Army, (Number*GlobalExplosionScaleValue))
+            else
+                self.CreateEffects(self, NEffectTemplate.OilSlick, Army, (Number*GlobalExplosionScaleValue))
+            end
+        end
+        oldSubUnit.OnKilled(self, instigator, type, overkillRatio)
+    end,
+}

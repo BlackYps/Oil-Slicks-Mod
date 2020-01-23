@@ -1,3 +1,6 @@
+local SDEffectTemplate = import('/mods/oil_slicks/lua/SDEffectTemplates.lua')
+local toggle = import('/mods/oil_slicks/lua/Togglestuff.lua').toggle
+
 local oldUnit = Unit
 Unit = Class(oldUnit) {
     GetUnitTechLvl = function(self)
@@ -22,5 +25,28 @@ Unit = Class(oldUnit) {
     
     GetFaction = function(self)
         return self.factionCategory
+    end,
+
+    OnCreate = function(self)
+        oldUnit.OnCreate(self)
+        local Faction = self:GetFaction()
+        local UnitTechLvl = self:GetUnitTechLvl()
+        LOG('*** ')
+        LOG('*** self.techCategory is: ', self.techCategory)
+        LOG('*** self.FactionCategory is: ', self:GetFaction())
+        LOG('*** self.FxDamageScale is: ', self.FxDamageScale)
+        LOG('*** self.FxDamage3Amount is: ', self.FxDamage3Amount)
+
+        local SDFactionalSmoke = SDEffectTemplate['UnitSmoke'..Faction]
+        local SDFactionalFire = SDEffectTemplate['UnitFire'..Faction]
+        local SDFactionalFireSmoke = SDEffectTemplate['UnitFireSmoke'..Faction]
+
+        if toggle == 1 then
+            -- Factional-specific damage effects and smoke
+            self.FxDamage1 = {SDFactionalSmoke, EffectTemplate.DamageSparks01} -- 75% HP
+            self.FxDamage2 = {SDFactionalFire, EffectTemplate.DamageFireSmoke01,
+                              EffectTemplate.DamageSparks01} -- 50% HP
+            self.FxDamage3 = {SDFactionalFireSmoke, EffectTemplate.DamageFire01} -- 25% HP
+        end
     end,
 }

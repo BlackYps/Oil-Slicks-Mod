@@ -1,10 +1,10 @@
 local oldUnit = Unit
 Unit = Class(oldUnit) {
     GetUnitTechLvl = function(self)
-        if self.techCategory and StringStartsWith(self.techCategory, "TECH") then
+        if self.techCategory then
             return self.techCategory
         else
-            return 'TECH1'
+            return 'techCategory not set'
         end
     end,
     
@@ -18,5 +18,9 @@ Unit = Class(oldUnit) {
         else
             return 1
         end
+    end,
+    
+    GetFaction = function(self)
+        return self.factionCategory
     end,
 }

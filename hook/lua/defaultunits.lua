@@ -7,6 +7,38 @@ local GlobalExplosionScaleValue = 1 * GlobalExplosionScaleValueMain
 
 local toggle = import('/mods/oil_slicks/lua/Togglestuff.lua').toggle
 
+
+
+-- local oldAirUnit = AirUnit
+-- AirUnit = Class(oldAirUnit) {
+--     OnCreate = function(self)
+--         oldAirUnit.OnCreate(self)
+
+local oldMobileUnit = MobileUnit
+MobileUnit = Class(oldMobileUnit) {
+    OnCreate = function(self)
+        oldMobileUnit.OnCreate(self)
+
+        local Faction = self:GetFaction()
+        local UnitTechLvl = self:GetUnitTechLvl()
+        LOG('*** Faction: ', Faction)
+        LOG('*** UnitTechLvl: ', UnitTechLvl)
+        local SDFactionalSmoke = SDEffectTemplate['UnitSmoke'..Faction]
+        local SDFactionalFire = SDEffectTemplate['UnitFire'..Faction]
+        local SDFactionalFireSmoke = SDEffectTemplate['UnitFireSmoke'..Faction]
+
+        if toggle == 1 then
+            -- Mobile unit factional-specific damage effects and smoke
+            self.FxDamage1 = {SDFactionalSmoke, EffectTemplate.DamageSparks01} -- 75% HP
+            self.FxDamage2 = {SDFactionalFire, EffectTemplate.DamageFireSmoke01,
+                              EffectTemplate.DamageSparks01} -- 50% HP
+            self.FxDamage3 = {SDFactionalFireSmoke, EffectTemplate.DamageFire01} -- 25% HP
+        end
+    end,
+}
+
+
+
 Helperfunctions = Class() {
 
     -- Get explosion scale based off Tech number
@@ -76,3 +108,20 @@ SubUnit = Class(oldSubUnit, Helperfunctions) {
         oldSubUnit.OnKilled(self, instigator, type, overkillRatio)
     end,
 }
+
+-- local oldStructureUnit = StructureUnit
+-- StructureUnit = Class(oldStructureUnit) {
+--     OnKilled = function(self)
+--         LOG('***---*** StructureUnit OnKilled HOOK')
+--         Unit.OnDestroy(self)
+--         local orient = self.TarmacBag.Orientation
+--         local currentBP = self.TarmacBag.CurrentBP
+--         self:DestroyTarmac()
+--         self:CreateTarmac(true, true, true, orient, currentBP, currentBP.DeathLifetime or 300)
+--     end,
+--
+--     OnDestroy = function(self)
+--         LOG('***---*** StructureUnit OnDestroy HOOK')
+--         Unit.OnDestroy(self)
+--     end,
+-- }

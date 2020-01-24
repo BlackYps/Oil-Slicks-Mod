@@ -1,7 +1,7 @@
 EmitterBlueprint {
 	BlueprintId = 'Cybran_Fall_Down_Smoke_T1',
-	Lifetime = -1.00,
-	Repeattime = -1.00,
+	Lifetime = -1,
+	Repeattime = -1,
 	TextureFramecount = 1.00,
 	Blendmode = 0.00,
 	LocalVelocity = false,
@@ -46,7 +46,7 @@ EmitterBlueprint {
 	EmitRateCurve = {
 		XRange = 50.00,
 		Keys = {
-			{ x=25.000,y=0.400,z=0.000 },
+			{ x=25.000,y=0.300/2,z=0.000 },
 		},
 	},
 	LifetimeCurve = {
@@ -58,7 +58,7 @@ EmitterBlueprint {
 	VelocityCurve = {
 		XRange = 50.00,
 		Keys = {
-			{ x=25.000,y=0.275,z=0.000 },
+			{ x=25.000,y=2.750,z=0.000 },
 		},
 	},
 	XAccelCurve = {
@@ -88,7 +88,7 @@ EmitterBlueprint {
 	SizeCurve = {
 		XRange = 50.00,
 		Keys = {
-			{ x=25.000,y=0.020,z=0.400 },
+			{ x=25.000,y=2.000/10,z=4.000 },
 		},
 	},
 	XPosCurve = {
@@ -100,7 +100,7 @@ EmitterBlueprint {
 	YPosCurve = {
 		XRange = 50.00,
 		Keys = {
-			{ x=25.000,y=0.100,z=0.000 },
+			{ x=25.000,y=1.000,z=0.500 },
 		},
 	},
 	ZPosCurve = {
@@ -112,13 +112,13 @@ EmitterBlueprint {
 	StartSizeCurve = {
 		XRange = 50.00,
 		Keys = {
-			{ x=25.000,y=0.100,z=0.000 },
+			{ x=25.000,y=1.000,z=0.000 },
 		},
 	},
 	EndSizeCurve = {
 		XRange = 50.00,
 		Keys = {
-			{ x=25.000,y=0.300,z=0.100 },
+			{ x=25.000,y=3.000,z=1.000 },
 		},
 	},
 	InitialRotationCurve = {

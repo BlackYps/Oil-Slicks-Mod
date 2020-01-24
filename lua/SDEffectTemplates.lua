@@ -5,21 +5,25 @@ OilSlick = {
        ModPath .. 'OilSlick.bp',
 }
 
+--##########################--
+--Damaged Units             --
+--##########################--
+
 UnitSmokeUEF = {
         EmtBpPath .. 'destruction_damaged_smoke_01_emit.bp',
 }
 
 UnitSmokeCYBRAN = {
-        ModPath .. 'CybranAircraftLightDmgSmokeTrail.bp',
-        ModPath .. 'CybranAircraftLightDmgFire.bp',
+        ModPath .. 'CybranUnitLightDmgSmokeTrail.bp',
+        ModPath .. 'CybranUnitLightDmgFire.bp',
 }
 
 UnitSmokeAEON = {
-        ModPath .. 'AeonAircraftLightDmgSmokeTrail.bp',
+        ModPath .. 'AeonUnitLightDmgSmokeTrail.bp',
 }
 
 UnitSmokeSERAPHIM = {
-        ModPath .. 'AeonAircraftLightDmgSmokeTrail.bp',
+        ModPath .. 'AeonUnitLightDmgSmokeTrail.bp',
 }
 
 UnitFireUEF = {
@@ -28,18 +32,18 @@ UnitFireUEF = {
 }
 
 UnitFireCYBRAN = {
-        ModPath .. 'CybranAircraftMediumDmgFire.bp',
-        ModPath .. 'CybranAircraftMediumDmgSmokeTrail.bp',
+        ModPath .. 'CybranUnitMediumDmgFire.bp',
+        ModPath .. 'CybranUnitMediumDmgSmokeTrail.bp',
 }
 
 UnitFireAEON = {
-        ModPath .. 'AeonAircraftMediumDmgFire.bp',
-        ModPath .. 'AeonAircraftMediumDmgSmokeTrail.bp',
+        ModPath .. 'AeonUnitMediumDmgFire.bp',
+        ModPath .. 'AeonUnitMediumDmgSmokeTrail.bp',
 }
 
 UnitFireSERAPHIM = {
-        ModPath .. 'SeraT3AircraftMediumDmgFire.bp',
-        ModPath .. 'AeonAircraftMediumDmgSmokeTrail.bp',
+        ModPath .. 'SeraUnitMediumDmgFire.bp',
+        ModPath .. 'AeonUnitMediumDmgSmokeTrail.bp',
 }
 
 UnitFireSmokeUEF = {
@@ -49,17 +53,81 @@ UnitFireSmokeUEF = {
 }
 
 UnitFireSmokeCYBRAN = {
+        ModPath .. 'CybranUnitHeavyDmgFire.bp',
+        ModPath .. 'CybranUnitHeavyDmgSmokeTrail.bp',
+}
+
+UnitFireSmokeAEON = {
+        ModPath .. 'AeonUnitHeavyDmgFire.bp',
+        ModPath .. 'AeonUnitHeavyDmgSmokeTrail.bp',
+}
+
+UnitFireSmokeSERAPHIM = {
+        ModPath .. 'SeraUnitHeavyDmgFire.bp',
+        ModPath .. 'AeonUnitHeavyDmgSmokeTrail.bp',
+}
+
+--##########################--
+--Damaged Structures        --
+--##########################--
+
+
+StructureSmokeUEF = {
+        EmtBpPath .. 'destruction_damaged_smoke_02_emit.bp',
+}
+
+StructureSmokeCYBRAN = {
+        ModPath .. 'CybranAircraftLightDmgSmokeTrail.bp',
+        ModPath .. 'CybranAircraftLightDmgFire.bp',
+}
+
+StructureSmokeAEON = {
+        ModPath .. 'AeonAircraftLightDmgSmokeTrail.bp',
+}
+
+StructureSmokeSERAPHIM = {
+        ModPath .. 'AeonAircraftLightDmgSmokeTrail.bp',
+}
+
+StructureFireUEF = {
+        EmtBpPath .. 'destruction_damaged_fire_02_emit.bp',
+        EmtBpPath .. 'destruction_damaged_fire_03_emit.bp',
+        EmtBpPath .. 'destruction_damaged_fire_distort_02_emit.bp',
+}
+
+StructureFireCYBRAN = {
+        ModPath .. 'CybranAircraftMediumDmgFire.bp',
+        ModPath .. 'CybranAircraftMediumDmgSmokeTrail.bp',
+}
+
+StructureFireAEON = {
+        ModPath .. 'AeonAircraftMediumDmgFire.bp',
+        ModPath .. 'AeonAircraftMediumDmgSmokeTrail.bp',
+}
+
+StructureFireSERAPHIM = {
+        ModPath .. 'SeraAircraftMediumDmgFire.bp',
+        ModPath .. 'AeonAircraftMediumDmgSmokeTrail.bp',
+}
+
+StructureFireSmokeUEF = {
+        EmtBpPath .. 'destruction_damaged_smoke_02_emit.bp',
+        EmtBpPath .. 'destruction_damaged_fire_02_emit.bp',
+        EmtBpPath .. 'destruction_damaged_fire_03_emit.bp',
+        EmtBpPath .. 'destruction_damaged_fire_distort_02_emit.bp',
+}
+
+StructureFireSmokeCYBRAN = {
         ModPath .. 'CybranAircraftHeavyDmgFire.bp',
         ModPath .. 'CybranAircraftHeavyDmgSmokeTrail.bp',
 }
 
-UnitFireSmokeAEON = {
+StructureFireSmokeAEON = {
         ModPath .. 'AeonAircraftHeavyDmgFire.bp',
         ModPath .. 'AeonAircraftHeavyDmgSmokeTrail.bp',
 }
 
-UnitFireSmokeSERAPHIM = {
-        ModPath .. 'SeraT3AircraftHeavyDmgFire.bp',
+StructureFireSmokeSERAPHIM = {
+        ModPath .. 'SeraAircraftHeavyDmgFire.bp',
         ModPath .. 'AeonAircraftHeavyDmgSmokeTrail.bp',
 }
-

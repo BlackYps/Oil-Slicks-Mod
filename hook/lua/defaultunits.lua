@@ -23,9 +23,9 @@ StructureUnit = Class(oldStructureUnit) {
         local UnitTechLvl = self:GetUnitTechLvl()
         LOG('*** StructureFaction: ', Faction)
         LOG('*** StructureTechLvl: ', UnitTechLvl)
-        local SDFactionalSmoke = SDEffectTemplate['UnitSmoke'..Faction]
-        local SDFactionalFire = SDEffectTemplate['UnitFire'..Faction]
-        local SDFactionalFireSmoke = SDEffectTemplate['UnitFireSmoke'..Faction]
+        local SDFactionalSmoke = SDEffectTemplate['StructureSmoke'..Faction]
+        local SDFactionalFire = SDEffectTemplate['StructureFire'..Faction]
+        local SDFactionalFireSmoke = SDEffectTemplate['StructureFireSmoke'..Faction]
 
         if toggle == 1 then
             -- Mobile unit factional-specific damage effects and smoke

@@ -106,7 +106,7 @@ StructureFireAEON = {
 }
 
 StructureFireSERAPHIM = {
-        ModPath .. 'SeraAircraftMediumDmgFire.bp',
+        ModPath .. 'SeraT3AircraftMediumDmgFire.bp',
         ModPath .. 'AeonAircraftMediumDmgSmokeTrail.bp',
 }
 
@@ -128,6 +128,6 @@ StructureFireSmokeAEON = {
 }
 
 StructureFireSmokeSERAPHIM = {
-        ModPath .. 'SeraAircraftHeavyDmgFire.bp',
+        ModPath .. 'SeraT3AircraftHeavyDmgFire.bp',
         ModPath .. 'AeonAircraftHeavyDmgSmokeTrail.bp',
 }

@@ -125,3 +125,113 @@ SubUnit = Class(oldSubUnit, Helperfunctions) {
 --         Unit.OnDestroy(self)
 --     end,
 -- }
+
+
+-- We need to have the subclasses, that don't override the new functions in StructureUnit,
+-- to use the new version
+-- This is undesirable because it will override the function if one gets added in a later game patch,
+-- but what can you do...
+
+-- AIR STAGING PLATFORMS UNITS
+local oldAirStagingPlatformUnit = AirStagingPlatformUnit
+AirStagingPlatformUnit = Class(oldAirStagingPlatformUnit) {
+    OnCreate = function(self)
+        StructureUnit.OnCreate(self)
+    end,
+}
+
+-- CONCRETE STRUCTURE UNITS
+local oldConcreteStructureUnit = ConcreteStructureUnit
+ConcreteStructureUnit = Class(oldConcreteStructureUnit) {
+    OnCreate = function(self)
+        StructureUnit.OnCreate(self)
+    end,
+}
+
+-- ENERGY CREATION UNITS
+local oldEnergyCreationUnit = EnergyCreationUnit
+EnergyCreationUnit = Class(oldEnergyCreationUnit) {
+    OnCreate = function(self)
+        StructureUnit.OnCreate(self)
+    end,
+}
+
+-- ENERGY STORAGE UNITS
+local oldEnergyStorageUnit = EnergyStorageUnit
+EnergyStorageUnit = Class(oldEnergyStorageUnit) {
+    OnCreate = function(self)
+        StructureUnit.OnCreate(self)
+    end,
+}
+
+-- MASS COLLECTION UNITS
+local oldMassCollectionUnit = MassCollectionUnit
+MassCollectionUnit = Class(oldMassCollectionUnit) {
+    OnCreate = function(self)
+        StructureUnit.OnCreate(self)
+    end,
+}
+
+-- MASS FABRICATION UNITS
+local oldMassFabricationUnit = MassFabricationUnit
+MassFabricationUnit = Class(oldMassFabricationUnit) {
+    OnCreate = function(self)
+        StructureUnit.OnCreate(self)
+    end,
+}
+
+--  MASS STORAGE UNITS
+local oldMassStorageUnit = MassStorageUnit
+MassStorageUnit = Class(oldMassStorageUnit) {
+    OnCreate = function(self)
+        StructureUnit.OnCreate(self)
+    end,
+}
+
+--  RADAR UNITS
+local oldRadarUnit = RadarUnit
+RadarUnit = Class(oldRadarUnit) {
+    OnCreate = function(self)
+        StructureUnit.OnCreate(self)
+    end,
+}
+
+-- RADAR JAMMER UNITS
+local oldRadarJammerUnit = RadarJammerUnit
+RadarJammerUnit = Class(oldRadarJammerUnit) {
+    OnCreate = function(self)
+        StructureUnit.OnCreate(self)
+    end,
+}
+
+-- SONAR UNITS
+local oldSonarUnit = SonarUnit
+SonarUnit = Class(oldSonarUnit) {
+    OnCreate = function(self)
+        StructureUnit.OnCreate(self)
+    end,
+}
+
+-- SHIELD STRCUTURE UNITS
+local oldShieldStructureUnit = ShieldStructureUnit
+ShieldStructureUnit = Class(oldShieldStructureUnit) {
+    OnCreate = function(self)
+        StructureUnit.OnCreate(self)
+    end,
+}
+
+-- TRANSPORT BEACON UNITS
+local oldTransportBeaconUnit = TransportBeaconUnit
+TransportBeaconUnit = Class(oldTransportBeaconUnit) {
+    OnCreate = function(self)
+        StructureUnit.OnCreate(self)
+    end,
+}
+
+-- WALL STRCUTURE UNITS
+local oldWallStructureUnit = WallStructureUnit
+WallStructureUnit = Class(oldWallStructureUnit) {
+    OnCreate = function(self)
+        StructureUnit.OnCreate(self)
+    end,
+}

@@ -23,8 +23,8 @@ EmitterBlueprint {
 	LowFidelity = true,
 	MedFidelity = true,
 	HighFidelity = true,
-	Texture = [[/mods/rks_explosions/textures/particles/electricity_wild_sdempnuke.dds]],
-	RampTexture = [[/mods/rks_explosions/textures/particles/ramp_transparency.dds]],
+	Texture = [[/mods/oil_slicks/textures/particles/electricity_wild_sdempnuke.dds]],
+	RampTexture = [[/mods/oil_slicks/textures/particles/ramp_transparency.dds]],
 	XDirectionCurve = {
 		XRange = 50.00,
 		Keys = {

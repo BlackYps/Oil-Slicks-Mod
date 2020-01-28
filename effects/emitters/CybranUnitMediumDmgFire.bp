@@ -23,8 +23,8 @@ EmitterBlueprint {
 	LowFidelity = true,
 	MedFidelity = true,
 	HighFidelity = true,
-	Texture = [[/mods/rks_explosions/textures/particles/cybran_charge.dds]],
-	RampTexture = [[/mods/rks_explosions/textures/particles/ramp_transparency.dds]],
+	Texture = [[/mods/oil_slicks/textures/particles/cybran_charge.dds]],
+	RampTexture = [[/mods/oil_slicks/textures/particles/ramp_transparency.dds]],
 	XDirectionCurve = {
 		XRange = 50.00,
 		Keys = {
